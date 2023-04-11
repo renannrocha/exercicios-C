@@ -22,7 +22,7 @@ int main()
         }
 
         if (intervalo_inicio == intervalo_fim){
-            printf("erro ! valores iguais");
+            printf("erro!! - intervalos iguais\n");
         }
         else{
             printf("Agora digite um valor : ");
@@ -33,11 +33,10 @@ int main()
             else{
                 printf("\n%d não esta dentro do intervalo de %d a %d\n", valor, intervalo_inicio, intervalo_fim);
             }
+            printf("\nDeseja repetir {s/n}? ");
+            scanf("%s", &resp);
         }
-
-        printf("\nDeseja repetir {s/n}? ");
-        scanf("%s", &resp);
-    }while (resp == 's');
+    }while (resp == 's' || intervalo_inicio == intervalo_fim);
 
 
     system("Pause");
