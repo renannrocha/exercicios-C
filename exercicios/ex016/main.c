@@ -1,16 +1,18 @@
 /**<
-16. Escreva um programa que leia 10 números e:
+16. Escreva um programa que leia 10 nÃºmeros e:
     a. Escreva o menor valor lido e o maior valor lido
     b. Some-os.
-    c. Imprima sua média.
+    c. Imprima sua mÃ©dia.
 
  */
 
+// aluno : Marcio Renan / matricula : 202208950035
 #include <stdio.h>
 #include <stdlib.h>
 
 int main()
 {
+    
     int soma = 0;
     int vet[10];
     for(int i = 0; i < 9; i++){
@@ -18,6 +20,7 @@ int main()
         scanf("%d", &vet[i]);
         soma = soma + vet[i];
     }
+
 
     int maior = vet[0];
     for (int i = 0; i < 9; i++){
@@ -33,12 +36,12 @@ int main()
         }
     }
 
-    double media = (double)soma / 10;
+    float media = (float)soma / 10;
 
     printf("maior valor = %d\n", maior);
     printf("menor valor = %d\n", menor);
     printf("soma = %d\n", soma);
-    printf("media = %.2lf\n", media);
+    printf("media = %.2f\n", media);
 
     return 0;
 }
