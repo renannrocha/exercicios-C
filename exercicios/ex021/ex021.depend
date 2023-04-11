@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681253509 source:c:\users\renan\onedrive\Área de trabalho\2°semestre\introdução c\exercicios-c\exercicios\ex021\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
