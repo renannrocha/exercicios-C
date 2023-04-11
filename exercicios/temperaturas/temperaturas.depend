@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1681245896 source:c:\users\renan\onedrive\Área de trabalho\2°semestre\introdução c\exercicios-c\exercicios\temperaturas\main.c
-	<stdio.h>
-	<stdlib.h>
-	<locale.h>
-	<string.h>
-
-1681246769 source:c:\users\renan\onedrive\Área de trabalho\2°semestre\introdução c\exercicios-c\exercicios\temperaturas\test.c
-
