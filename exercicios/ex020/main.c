@@ -1,3 +1,4 @@
+// aluno: Marcio Renan / matricula: 202208950035
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -15,29 +16,27 @@ int main()
     printf("| ( 1 = Fahrenheit ) ( 2 = Celsius ) ( 3 = Kelvin ) |\n");
     printf("|___________________________________________________|\n");
 
-    printf("\nDigite a escala atual da temperatura: ");
+    printf("\nDigite a escala atual da temperatura (1/2/3): ");
     scanf("%d", &escalaInicial);
 
-    printf("\nDigite escala para qual voce quer converter: ");
+    printf("\nDigite escala para qual voce quer converter (1/2/3): ");
     scanf("%d", &escalaFinal);
 
-    switch (escalaInicial)
-    {
+    switch (escalaInicial){
     case 1:
         printf("\nDigite a temperatura em Fahrenheit: ");
         scanf("%f", &temp);
 
-        switch(escalaFinal)
-        {
+        switch(escalaFinal){
         case 2:
             // C = (F − 32) / 1,8
             convertC = (temp - 32) / 1.8;
-            printf("\nresultado = %.2fC\n", convertC);
+            printf("\nresultado = %.4fC\n", convertC);
             break;
         case 3:
             convertC = (temp- 32) / 1.8;
             convertK = convertC + 273.15;
-            printf("\nresultado = %.2fK\n", convertK);
+            printf("\nresultado = %.4fK\n", convertK);
             break;
         default:
             printf("\nERRO!!\n");
@@ -48,17 +47,16 @@ int main()
         printf("\nDigite a temperatura em Celsius: ");
         scanf("%f", &temp);
 
-        switch(escalaFinal)
-        {
+        switch(escalaFinal){
         case 1:
             // F = C*(1,8) + 32
             convertF = (temp*(1.8)) + 32;
-            printf("\nresultado = %.2fF\n", convertF);
+            printf("\nresultado = %.4fF\n", convertF);
             break;
         case 3:
             //K = C + 273,15
             convertK = temp + 273.15;
-            printf("\nresultado = %.2fK\n", convertK);
+            printf("\nresultado = %.4fK\n", convertK);
             break;
         default:
             printf("\nERRO!!\n");
@@ -68,17 +66,16 @@ int main()
         printf("\nDigite a temperatura em Kelvin: ");
         scanf("%f", &temp);
 
-        switch(escalaFinal)
-        {
+        switch(escalaFinal){
         case 1:
             // F = 1,8(K-273) + 32
             convertF = (1.8*(temp-273)) + 32;
-            printf("\nresultado = %.2fF\n", convertF);
+            printf("\nresultado = %.4fF\n", convertF);
             break;
         case 2:
             // C = K – 273,15
             convertC = temp - 273.15;
-            printf("\nresultado = %.2fC\n", convertC);
+            printf("\nresultado = %.4fC\n", convertC);
             break;
         default:
             printf("\nERRO!!\n");
@@ -87,7 +84,6 @@ int main()
     default:
         printf("\nERRO!!\n");
     }
-
 
     system("Pause");
     return 0;
