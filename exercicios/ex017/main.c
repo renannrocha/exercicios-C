@@ -1,16 +1,34 @@
+// aluno : Marcio Renan / matricula : 202208950035
 #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
-    int x;
+    setlocale(LC_ALL, "Portuguese");
+    
+    int x, valor, divisores;
     printf("digite um numero: ");
     scanf("%d", &x);
-
-    if (x % 1 == 0 && x > 1){
-        printf("Numero primo");
+    
+    valor = 1;
+    divisores = 0;
+    if(x > 0){
+      while(valor <= x){
+          if(x % valor == 0){
+              divisores++;
+          } 
+          valor++;
+      } 
+      if (divisores == 2){
+          printf("%d Ã© um numero primo", x);
+      }
+      else {
+          printf("%d nÃ£o Ã© um numero primo", x);
+      }
     }
     else{
-        printf("Não é numero primo");
+        printf(" Valor negativo ou igual a zero !!");
     }
 
     return 0;
