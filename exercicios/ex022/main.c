@@ -11,22 +11,44 @@ Av2, recalcular a média e mostrar o resultado da aprovação ou reprovação dos alu
 int main()
 {
     setlocale(LC_ALL, "portuguese");
-    int soma;
-    float notaAluno_1[3];
-    float notaAluno_2[3];
-    float notaAluno_3[3];
-    soma = 0;
+    float soma, media, menorNota;
+    float notaAluno1[3];
+    float notaAluno2[3];
+    float notaAluno3[3];
 
-    printf("Aluno 1\n");
-    for(int i = 0; i < 2; i++){
-        printf("digite a %d nota do primeiro aluno: ", i+1);
-        scanf("%f", &notaAluno_1[i]);
-        soma = soma + notaAluno_1[i];
+    printf("\nALUNO 1\n");
+    for(int i = 0; i < 3; i++){
+        printf("Digite AV%d: ", i+1);
+        scanf("%f", &notaAluno1[i]);
+    }
+    soma = notaAluno1[1] + notaAluno1[2];
+    media = soma / 2;
+    printf("media AV1, AV2: %.2f\n", media);
+
+    menorNota = notaAluno1[0];
+    for(int i = 0; i < 3; i++){
+        if (notaAluno1[i] < menorNota){
+            menorNota = notaAluno1[i];
+        }
     }
 
-    for(int i = 0; i < 2; i++){
-        printf("%.2f \n", notaAluno_1[i]);
+    if(media < 6.0){
+       soma = soma - menorNota;
+       soma = soma + notaAluno1[3];
+       media = soma / 2;
+       if(media > 6.0){
+            printf("media : %.2f  - Aprovado\n", media);
+       }
+       else{
+            printf("media : %.2f  - Reprovado\n", media);
+       }
     }
+    else{
+        printf("APROVADO\n");
+    }
+
+    printf("soma : %.2f\n", soma);
+    printf("menor nota : %.2f\n", menorNota);
 
 
     system("Pause");
