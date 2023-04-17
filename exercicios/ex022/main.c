@@ -1,7 +1,7 @@
 /**<
- Criar um programa que receba 3 notas de 3 alunos. Caso o aluno não obtenha nota superior a
-6 na média entre a duas notas AV1 e AV2, inserir nota AV3 e substituir a menor entre Av1 e
-Av2, recalcular a média e mostrar o resultado da aprovação ou reprovação dos alunos.
+ Criar um programa que receba 3 notas de 3 alunos. Caso o aluno nï¿½o obtenha nota superior a
+6 na mï¿½dia entre a duas notas AV1 e AV2, inserir nota AV3 e substituir a menor entre Av1 e
+Av2, recalcular a mï¿½dia e mostrar o resultado da aprovaï¿½ï¿½o ou reprovaï¿½ï¿½o dos alunos.
  */
 
 #include <stdio.h>
@@ -11,46 +11,62 @@ Av2, recalcular a média e mostrar o resultado da aprovação ou reprovação dos alu
 int main()
 {
     setlocale(LC_ALL, "portuguese");
-    float soma, media, menorNota;
-    float notaAluno1[3];
-    float notaAluno2[3];
-    float notaAluno3[3];
 
-    printf("\nALUNO 1\n");
-    for(int i = 0; i < 3; i++){
-        printf("Digite AV%d: ", i+1);
-        scanf("%f", &notaAluno1[i]);
-    }
-    soma = notaAluno1[1] + notaAluno1[2];
-    media = soma / 2;
-    printf("media AV1, AV2: %.2f\n", media);
+    float soma, media1, media2, menorNota;
+    float notaAluno[2];
+    int i;
 
-    menorNota = notaAluno1[0];
-    for(int i = 0; i < 3; i++){
-        if (notaAluno1[i] < menorNota){
-            menorNota = notaAluno1[i];
+    i = 0;
+    do{
+        soma = 0;
+        media1 = 0;
+        media2 = 0;
+        menorNota = 0;
+
+        printf("Aluno %d\n", i+1);
+
+        // imput
+        for(int n = 0; n < 3; n++)
+        {
+            printf("Digite a nota AV%d: ", n+1);
+            scanf("%f", &notaAluno[n]);
+            printf("%.2f ", notaAluno[n]);
         }
-    }
+        printf("\n");
 
-    if(media < 6.0){
-       soma = soma - menorNota;
-       soma = soma + notaAluno1[3];
-       media = soma / 2;
-       if(media > 6.0){
-            printf("media : %.2f  - Aprovado\n", media);
-       }
-       else{
-            printf("media : %.2f  - Reprovado\n", media);
-       }
-    }
-    else{
-        printf("APROVADO\n");
-    }
+        soma = notaAluno[0] + notaAluno[1];
+        media1 = soma / 2.0;
 
-    printf("soma : %.2f\n", soma);
-    printf("menor nota : %.2f\n", menorNota);
+        // menor nota
+        if(notaAluno[0] < notaAluno[1] && notaAluno[0] < notaAluno[2]){
+            menorNota = notaAluno[0];
+        }
+        else{
+            menorNota = notaAluno[1];
+        }
+
+        if( media1 >= 6.0 ){
+            printf("media = %.1f - (APROVADO\n", media1);
+        }
+        else{
+            soma = soma - menorNota;
+            soma =  soma + notaAluno[2];
+            media2 = soma / 2.0;
+        }
+
+        if(media2 >= 6.0){
+            printf("media = %.1f - (APROVADO)\n", media2);
+        }
+        else{
+            printf("media = %.1f - (REPROVADO)\n", media2);
+        }
+
+        printf("menor nota = %.2f\n", menorNota);
+        printf("soma = %.2f\n\n", soma);
+        i++;
+    }while(i < 3);
 
 
-    system("Pause");
-    return 0;
+system("Pause");
+return 0;
 }
