@@ -17,7 +17,7 @@ int main()
     }
 
     media = soma / 10;
-    printf("\n media = %.2f", media);
+    printf("\n media  = %.2f", media);
     system("Pause");
     return 0;
 }
